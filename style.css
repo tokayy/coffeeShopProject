@@ -1,0 +1,510 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+}
+/*! bu önemli: root */
+:root{
+--main-color: #d3ad7f;
+--black-color: #13131a;
+--bg-color: #010103;
+--border: 0.1rem solid rgba(255, 255, 255, 0.3);
+}
+
+body{
+    background-color: var(--bg-color);
+    color: white;
+    font-family: "Roboto", serif;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+html::-webkit-scrollbar{
+  width: 0.8rem;
+}
+html::-webkit-scrollbar-track{
+background-color: transparent;
+}
+html::-webkit-scrollbar-thumb{
+background-color: white;
+border-radius: 5rem;
+}
+section{padding: 2rem 7%;
+}
+.btn{
+    display: inline-block;
+    border-radius: 4px;
+    padding: 0.9rem 3rem;
+    font-size: 1.7rem;
+    background-color: var(--main-color);
+    color: white;
+    cursor: pointer;
+}
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+
+}
+
+.heading span{
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+.btn:hover{
+    scale: 1.1;
+}
+header {
+    background-color: var(--bg-color); 
+    display: flex; /* Header içindeki elemanları bir satırda düzenlemek için kullandık.*/
+    align-items: center; /* Header içindeki elemanları dikey olarak ortalamak için. */
+    justify-content: space-between; /* Elemanlar arasına eşit boşluk bırakmak için kullanılır. Sol ve sağdaki elemanlar, header içinde uçlarda yer alır. */
+    padding: 1.5rem 7%; /* Header içindeki elemanlara üst-alt için 1.5rem, sağ-sol için %7 kadar boşluk bırakıldı. */
+    border-bottom: var(--border); /* Header altına bir kenarlık (çizgi) eklemek için bir CSS değişkeni kullanıldı. Bu, tasarıma hoş bir ayrım kazandırır. */
+    position: fixed; /* Header'ı ekranda sabitlemek için kullanılır. Bu sayede kullanıcı aşağı kaydırsa bile header görünür kalır. */
+    width: 100%; /* Header genişliğini tam ekran genişliğine yaymak için kullanılır. */
+    top: 0; /* Header'ı ekranın en üstünde sabitlemek için kullanılır. */
+    left: 0; /* Header'ın yatayda en sol köşede başlamasını sağlar. */
+    z-index: 1000; /* Header'ın diğer elementlere göre önde görünmesini sağlamak için bir yükseklik katmanı değeri atanır. Bu, örneğin bir içerik kaydırıldığında header'ın içerik üzerinde görünmesini sağlar. */
+}
+
+header .logo img{
+    height: 6rem;
+    border-radius: 100%;
+}
+
+header nav a{
+    color: white;
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin: 0.8rem;
+    justify-content: space-between;
+    }
+header nav a:hover{
+    color: var(--main-color);
+    border-bottom: 0.1rem solid var(--main-color);
+    padding-bottom: 0.5rem;
+}
+header .icons i{
+    color: white;
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+
+header .icons i:hover{
+    color: var(--main-color);
+}
+header .icons{
+    display: none;
+}
+.home{
+    background-color: red;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url(./İmages/home.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.home .content{
+    max-width: 60rem;
+}
+
+.home .content h3{
+font-size: 6rem;
+text-transform: uppercase;
+}
+.home .content p{
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    line-height: 1.8;
+    font-weight: lighter;
+    color: #eee;
+     
+}
+
+.about .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.about .row .image {
+    flex: 1 1 45rem;
+}
+.about .row .image img{
+    width: 100%;
+}
+
+.about .row .content{
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+
+.about .row .content h3{
+    font-size: 3rem;
+}
+
+.about .row .content p{
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    line-height: 1.8; 
+}
+
+/* MENU */
+
+/* Ana konteynerin düzeni */
+.menu .box-container {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)); 
+    /* Otomatik olarak elemanları 30rem ile 1fr arasında büyüklükte yerleştirir. 
+       auto-fit, eleman sayısına göre kolonları doldurur. */
+    gap: 1.5rem; /* Grid hücreleri arasındaki boşluk. */
+}
+
+/* Her bir kutunun temel stilleri */
+.menu .box-container .box {
+    border: var(--border); /* Kutunun çevresindeki kenarlık. Renk veya kalınlık değişebilir. */
+    padding: 5rem; /* Kutunun içeriği ile kenarları arasındaki boşluk. */
+    text-align: center; /* İçerikteki yazıları ortalar. */
+    transition: all 0.4s; /* Hover durumundaki değişimlerin 0.4 saniyede gerçekleşmesini sağlar. */
+}
+
+/* Kutunun içindeki başlık (h3) */
+.menu .box-container .box h3 {
+    font-size: 2rem; 
+    padding: 1rem 0; /* Başlığın üstü ve altındaki boşluk. */
+}
+
+/* Fiyat bilgisinin temel stilleri */
+.menu .box-container .box .price {
+    font-size: 2.5rem; /* Fiyatın yazı boyutu. */
+    padding: 0.5rem 0; /* Fiyatın üstü ve altındaki boşluk. */
+}
+
+/* Fiyat bilgisindeki "indirimli" eski fiyatın stili */
+.menu .box-container .box .price span {
+    font-size: 1.5rem; /* Eski fiyatın yazı boyutu. */
+    font-weight: lighter; /* Daha ince bir yazı ağırlığı. */
+    text-decoration: line-through; /* Eski fiyatın üstü çizilir (indirim göstermek için). */
+}
+
+/* Kutunun içindeki resim */
+.menu .box-container .box img {
+    height: 10rem; /* Resmin yüksekliği 10rem. */
+    width: 10rem; /* Resmin genişliği 10rem. */
+    border-radius: 50%; /* Resmi daire şekline çevirir. */
+}
+
+/* Hover durumunda kutuya uygulanacak değişiklikler */
+.menu .box-container .box:hover {
+    background-color: white; /* Arka plan rengini beyaz yapar. */
+    color: black; /* Yazı rengini siyah yapar. */
+    cursor: pointer; /* Kullanıcı fareyle üzerine geldiğinde tıklanabilir olduğunu gösterir. */
+}
+
+.products .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+  }
+  .products .box-container .product-box {
+    border: var(--border);
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .products .box-container .product-box .image {
+    padding: 2.5rem 0;
+  }
+  
+  .products .box-container .product-box .image img {
+    height: 25rem;
+    width: 25rem;
+  }
+  
+  .products .box-container .product-box .content h3 {
+    font-size: 2.5rem;
+  }
+  .products .box-container .product-box .content .stars {
+    padding: 1.5rem;
+  }
+  .products .box-container .product-box .content .stars i {
+    font-size: 1.7rem;
+    color: var(--main-color);
+  }
+  .products .box-container .product-box .content .price {
+    font-size: 2.5rem;
+  }
+  .products .box-container .product-box .content .price span {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+  }
+  .reviews .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .reviews .box-container .box {
+    border: var(--border);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  
+  .reviews .box-container p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #ccc;
+    padding: 2rem 0;
+  }
+  
+  .reviews .box-container .box img {
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+  }
+  
+  .reviews .box-container h3 {
+    font-size: 2rem;
+    padding: 1rem 0;
+  }
+  
+  .reviews .box-container .stars i {
+    font-size: 1.5rem;
+    color: var(--main-color);
+  }
+  
+  /* * Contact */
+  .contact .row {
+    display: flex;
+    background-color: var(--black-color);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .contact .row .map {
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .contact .row form {
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+  }
+  .contact .row form h3 {
+    text-transform: uppercase;
+    font-size: 3.5rem;
+  }
+  .contact .row form .input-box {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0 2rem;
+    border: var(--border);
+  }
+  .contact .row form .input-box span {
+    font-size: 2rem;
+    padding-left: 2rem;
+  }
+  .contact .row form .input-box input {
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.7rem;
+    text-transform: none;
+    background: none;
+    color: white;
+  }
+  
+  .btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-container .btn {
+    width: 100%;
+  }
+  .btn-container .btn:hover {
+    scale: 0.9;
+  }
+  /* Bir inputun placeholder rengini düzenleme: */
+  .contact .row form .input-box input::placeholder {
+    color: whitesmoke;
+  }
+  
+  /* * Blogs */
+  
+  .blogs .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+  }
+  .blogs .box-container .box {
+    border: var(--border);
+  }
+  /* Box'a hover olunduğunda image e hover özelliği ver */
+  .blogs .box-container .box:hover > .image img {
+    scale: 1.2;
+  }
+  
+  .blogs .box-container .box .image {
+    height: 25rem;
+    overflow: hidden;
+    width: 100%;
+  }
+  .blogs .box-container .box .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .blogs .box-container .box .content {
+    padding: 2rem;
+  }
+  .blogs .box-container .box .content a {
+    color: white;
+    font-size: 2.5rem;
+    line-height: 1.5;
+  }
+  .blogs .box-container .box .content a:hover {
+    color: var(--main-color);
+  }
+  
+  .blogs .box-container .box .content span {
+    color: var(--main-color);
+    display: block;
+    padding-top: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .blogs .box-container .box .content p {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color: #ccc;
+  }
+  
+  /* * Footer */
+  
+  footer {
+    background-color: var(--black-color);
+    text-align: center;
+  }
+  
+  footer .icons {
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  footer .icons i {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    display: grid;
+    place-items: center;
+    /*  display: grid;
+    place-items: center; iconları ortalamak için kullanıldı  */
+    border: var(--border);
+  }
+  
+  footer .icons i:hover {
+    background-color: var(--main-color);
+  }
+  
+  footer .links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+  }
+  footer .links a {
+    color: white;
+    font-size: 2rem;
+    padding: 0.7rem 2rem;
+    border: var(--border);
+  }
+  footer .links a:hover {
+    background-color: var(--main-color);
+  }
+  
+  footer .copyright {
+    font-size: 2rem;
+    font-weight: lighter;
+    padding: 1.5rem;
+  }
+  
+  footer .copyright span {
+    color: var(--main-color);
+  }
+
+  
+/* responsive design */
+@media(max-width: 900px) {
+    header{
+        padding: 1.5rem 2rem;
+    }
+    header .icons {
+        display: block;
+    }
+    header nav {
+        position: absolute;
+        top: 120%;
+        right: 3%;
+        display: none;
+        flex-direction: column;
+        gap: 3rem;
+        background-color: var(--bg-color);
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px var(--main-color);
+        text-align: center;
+    }
+    header nav.active {
+        display: flex;
+    }
+    sevtion{
+        padding: 2rem;
+    }
+    .home{
+        background-position: left;
+        justify-content: center;
+        text-align: center;
+    }
+    .home .content h3{
+        font-size: 4.5rem;
+    }
+    .home .content p{
+        font-size:  1rem;
+    }
+    }
+    @media(max-width: 600px) {
+        header .icons i {
+            font-size: 2rem;
+        }
+    .about .row .content h3{
+        font-size: 2.5rem;
+    }
+    .about .row .content p {
+        font-size: 1.2rem;
+    }
+    html{
+      font-size: 50%;
+    }
+    }
